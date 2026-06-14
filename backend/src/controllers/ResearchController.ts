@@ -56,7 +56,7 @@ export class ResearchController {
     // Run deep research and stream updates
     AgentOrchestrator.executeResearch(sessionId, session.query, (update) => {
       res.write(`data: ${JSON.stringify(update)}\n\n`);
-    }).catch((err) => {
+    }).catch((err: any) => {
       res.write(`data: ${JSON.stringify({ type: 'error', message: err.message })}\n\n`);
     });
 

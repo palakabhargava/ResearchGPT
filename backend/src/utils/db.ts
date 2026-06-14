@@ -23,7 +23,7 @@ if (process.env.DATABASE_URL && !process.env.DATABASE_URL.includes("your-db-url-
         console.log('Successfully connected to PostgreSQL database via Prisma.');
         usePrisma = true;
       })
-      .catch((err) => {
+      .catch((err: any) => {
         console.warn('PostgreSQL connection failed. Falling back to In-Memory storage. Error:', err.message);
         usePrisma = false;
         prisma = null;
